@@ -1,0 +1,247 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartHelmet | Next Generation AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@
+300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+<div class="logo">Smart<span>Helmet</span></div>
+<ul class="nav-links">
+<li><a href="index.html" class="active">Home</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="buy.html">Buy Now</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<div class="menu-toggle"><i class="fas fa-bars"></i></div>
+</nav>
+<header class="hero">
+<div class="hero-content fade-in">
+<h1>Next Generation <br><span class="neon-text">AI Smart Helmet</span></h1>
+<p>Experience the ultimate fusion of absolute protection and advanced artificial intelligence. Ride safer, 
+smarter, and faster.</p>
+<div class="hero-buttons">
+<a href="buy.html" class="btn btn-primary">Buy Now</a>
+<a href="#features" class="btn btn-secondary">Watch Demo</a>
+</div>
+// --- Mobile Navbar Toggle --
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (menuToggle) {
+menuToggle.addEventListener('click', () => {
+navLinks.classList.toggle('active');
+});
+}
+// --- Buy Form Submission & Popup Logic --
+const buyForm = document.getElementById('buyForm');
+const modal = document.getElementById('successModal');
+const modalName = document.getElementById('modalName');
+
+if (buyForm) {
+buyForm.addEventListener('submit', function(e) {
+e.preventDefault(); // Prevents page reload
+// Get user's name from input
+const nameInput = document.getElementById('fullName').value;
+modalName.textContent = nameInput;
+// Show Modal
+modal.style.display = 'flex';
+// Reset form
+buyForm.reset();
+  
+})
+};
+
+buyForm.reset();
+
+// Function to close the modal (triggered by HTML button)
+function closeModal() {
+modal.style.display = 'none';
+}
+
+// --- Contact Form Handling --
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+alert('Message sent successfully! Our team will reach out soon.');
+contactForm.reset();
+});
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy SmartHelmet | Pre-Order</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@
+300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+<div class="logo">Smart<span>Helmet</span></div>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html#features">Features</a></li>
+<li><a href="buy.html" class="active">Buy Now</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+<div class="menu-toggle"><i class="fas fa-bars"></i></div>
+</nav>
+<div class="container product-page">
+<div class="product-details">
+<div class="product-image">
+<img src="smart_helmet.webp">
+</div>
+<div class="product-info">
+<h1>SmartHelmet <span class="neon-text">PRO V2</span></h1>
+<div class="ratings">
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star">
+</i><i class="fas fa-star-half-alt"></i> (4.8/5)
+</div>
+<h2>$499.00</h2>
+<p>The ultimate riding companion equipped with a 4K dashcam, rear-view sensors, and an AI-powered 
+voice assistant.</p>
+New Section 1 Page 3   
+<table class="specs-table">
+<tr><th>Specification</th><th>Details</th></tr>
+<tr><td>Material</td><td>Carbon Fiber & Kevlar</td></tr>
+<tr><td>Weight</td><td>1.2 kg (Ultra-light)</td></tr>
+<tr><td>Battery Backup</td><td>72 Hours (Active Use)</td></tr>
+<tr><td>Bluetooth</td><td>v5.2 Low Energy</td></tr>
+<tr><td>Camera</td><td>Front 4K / Rear 1080p</td></tr>
+<tr><td>GPS</td><td>Built-in GLONASS</td></tr>
+</table>
+</div>
+</div>
+<div class="purchase-section">
+<h2 class="section-title">Secure <span class="neon-text">Checkout</span></h2>
+<form id="buyForm" class="buy-form">
+<div class="form-group">
+<label>Full Name</label>
+<input type="text" id="fullName" required placeholder="John Doe">
+</div>
+<div class="form-group">
+<label>Email Address</label>
+<input type="email" id="email" required placeholder="john@example.com">
+</div>
+<div class="form-group">
+<label>Phone Number</label>
+<input type="tel" id="phone" required placeholder="+1 234 567 8900">
+</div>
+<div class="form-group">
+<label>Shipping Address</label>
+<textarea id="address" rows="3" required placeholder="123 Tech Street, Silicon Valley..."></textarea>
+</div>
+<div class="form-group row">
+<div class="half">
+<label>Quantity</label>
+<input type="number" id="quantity" min="1" max="5" value="1">
+</div>
+<div class="half">
+<label>Payment Method</label>
+<select id="payment">
+<option value="card">Credit/Debit Card</option>
+<option value="paypal">PayPal</option>
+<option value="crypto">Cryptocurrency</option>
+</select>
+</div>
+</div>
+<button type="submit" class="btn btn-primary full-width">Complete Purchase</button>
+</form>
+</div>
+<div class="extra-info">
+<h3>FAQ & Warranty</h3>
+<p><strong>Warranty:</strong> All helmets come with a 2-year manufacturer warranty covering 
+electronic and structural defects.</p>
+<p><strong>Shipping:</strong> Free worldwide shipping. Deliveries take 5-7 business days.</p>
+</div>
+</div>
+<footer>
+<div class="copyright">
+<p>&copy; 2026 SmartHelmet. All rights reserved.</p>
+</div>
+New Section 1 Page 4   
+</div>
+</footer>
+<div id="successModal" class="modal">
+<div class="modal-content">
+<i class="fas fa-check-circle neon-text" style="font-size: 3rem; margin-bottom: 15px;"></i>
+<h2>Order Placed Successfully!</h2>
+<p>Thank you, <span id="modalName"></span>. Your order confirmation has been sent to your 
+email.</p>
+<button class="btn btn-primary" onclick="closeModal()">Continue Shopping</button>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+{
+    "liveServer.settings.port": 5501
+}
+arset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | SmartHelmet</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+<div class="logo">Smart<span>Helmet</span></div>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html#features">Features</a></li>
+<li><a href="buy.html">Buy Now</a></li>
+<li><a href="contact.html" class="active">Contact</a></li>
+</ul>
+<div class="menu-toggle"><i class="fas fa-bars"></i></div>
+</nav>
+<div class="container contact-page">
+<h1 class="section-title">Get in <span class="neon-text">Touch</span></h1>
+<div class="contact-grid">
+<div class="contact-info-section">
+<h3>Headquarters</h3><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta ch
+<p><i class="fas fa-map-marker-alt"></i> Innovation Hub, Silicon Valley, CA</p>
+<p><i class="fas fa-envelope"></i> support@smarthelmet.io</p>
+<p><i class="fas fa-phone"></i> +1 800-123-4567</p>
+<h3 style="margin-top: 30px;">Follow Us</h3>
+<div class="social-icons">
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+<div class="contact-form-section">
+<form id="contactForm" class="buy-form">
+<div class="form-group">
+<input type="text" placeholder="Your Name" required>
+</div>
+<div class="form-group">
+<input type="email" placeholder="Your Email" required>
+</div>
+<div class="form-group">
+<textarea rows="5" placeholder="How can we help you?" required></textarea>
+</div>
+<button type="submit" class="btn btn-secondary full-width">Send Message</button>
+</form>
+</div>
+</div>
+</div>
+<footer>
+<div class="copyright">
+<p>&copy; 2026 SmartHelmet. All rights reserved.</p>
+</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
